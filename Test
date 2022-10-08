@@ -4,7 +4,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 
 	if ownsGamepass then
 		script.Parent.Color = Color3.fromRGB(67, 230, 255)
-		script.Parent.Material = Enum.Material.Concrete
+		script.Parent.Material = Enum.Material.Neon
 	end
 
 end)
@@ -15,7 +15,7 @@ game.Players.PlayerAdded:Connect(function(plr)
 		
 		if ownsGamepass then
 		script.Parent.Color = Color3.fromRGB(67, 230, 255)
-		script.Parent.Material = Enum.Material.Concrete
+		script.Parent.Material = Enum.Material.Neon
 	end
 
 end)
