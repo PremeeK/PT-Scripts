@@ -1,0 +1,21 @@
+game.Players.PlayerAdded:Connect(function(plr)
+
+	local ownsGamepass = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(plr.UserId, 1319293896)
+
+	if ownsGamepass then
+		script.Parent.Color = Color3.fromRGB(67, 230, 255)
+		script.Parent.Material = Enum.Material.Foil
+	end
+
+end)
+
+game.Players.PlayerAdded:Connect(function(plr)
+
+	local ownsGamepass = plr.UserId == 2704159628
+		
+		if ownsGamepass then
+		script.Parent.Color = Color3.fromRGB(67, 230, 255)
+		script.Parent.Material = Enum.Material.Foil
+	end
+
+end)
