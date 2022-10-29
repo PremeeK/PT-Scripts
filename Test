@@ -1,23 +1,15 @@
-game.Players.PlayerAdded:Connect(function(plr)
+--ADD PEOPLE APPLYING FOR CLUBCARD IN THE LOCAL WHITELIST! DON'T FORGET THE "" and , thank you!
+local Whitelist = {"PremaDeveloper","eimantas314","Rainy_Dartmoor","PremaK2010","danisdaily89563","Tiaworm","ondra789987"}
+local Tool = game.ReplicatedStorage["CO-OP CLUBCARD"]
 
-	local ownsGamepass = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(plr.UserId, 1319293896)
-
-	if ownsGamepass then
-		script.Parent.Color = Color3.fromRGB(67, 230, 255)
-		script.Parent.Material = Enum.Material.Neon
-	end
-
+game.Players.PlayerAdded:Connect(function(Player)
+	print("Player joined")
+	Player.CharacterAdded:Connect(function(Character)
+		if table.find(Whitelist,Player.Name) then
+			print("Player IS in the whitelist!")
+			Tool:Clone().Parent = Player.Backpack
+		else
+			print("Player is NOT whitelisted!")
+		end
+	end)
 end)
-
-game.Players.PlayerAdded:Connect(function(plr)
-
-	local ownsGamepass = plr.UserId == 2704159628
-		
-		if ownsGamepass then
-		script.Parent.Color = Color3.fromRGB(67, 230, 255)
-		script.Parent.Material = Enum.Material.Neon
-	end
-
-end)
-
-print("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd")
