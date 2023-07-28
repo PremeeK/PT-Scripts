@@ -1,4 +1,7 @@
-local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
+local Parcel = require(9428572121)
+
+if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") then
+    local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
 local stset = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky
 local stsetout = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs
 local stsetside = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs
@@ -9,12 +12,6 @@ local stsetnum = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent[
 local fronttexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury
 local sidetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury
 local linetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury
-
-local Parcel = require(9428572121)
-
-if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") then
-	
-
 
 --FIRST--
 script.Parent.MouseButton1Up:Connect(function()
@@ -1960,6 +1957,8 @@ script.Parent.MouseButton1Up:Connect(function()
 
 end)
 else
-	print("EPIS SYSTEM - THE OWNER OF THE GAME DOESN'T HAVE A LICENCE TO USE THIS MODEL ASK PREMEEK FOR MORE INFORMATIONS")
-	game.Workspace:ClearAllChildren()
+	print("EPIS SYSTEM - CHECKING WHITELIST")
+	wait(2)
+	print("EPIS SYSTEM - WHITELIST NOT FOUND")
+    	game.Workspace:ClearAllChildren()
 end
