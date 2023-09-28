@@ -1,15 +1,17 @@
 local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
+-- local PANELS --
 local stset = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky
 local stsetout = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs
 local stsetside = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs
 local stsetdots = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"]
 local stsetepis = script.Parent.Parent.Parent.Stops
 local stsetnum = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI
---local TEXTURES--
+-- local TEXTURES --
 local fronttexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury
 local sidetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury
 local linetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury
-
+-- local PROPERTIES --
+local reprak = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni
 local Parcel = require(9428572121)
 
 if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") then
@@ -18,8 +20,32 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	--FIRST--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 1 then
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.first.CountOfStops and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
 			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
 			stset["1"].Text = codes.Lines.first.Stations.Prazdno
 			stset["2"].Text = codes.Lines.first.Stations.Prazdno
 			stset["3"].Text = codes.Lines.first.Stations.Prazdno
@@ -30,7 +56,6 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
 			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
@@ -38,7 +63,6 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
 			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
 			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
 			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
 			fronttexture.ImageLabel.Image = "rbxassetid://0"
 			fronttexture.Enabled = false
@@ -49,6 +73,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.FourteenFifteen
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 15
 			stset["1"].Text = codes.Lines.first.Stations.Fifteen
 			stset["2"].Text = codes.Lines.first.Stations.Prazdno
@@ -62,6 +89,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.ThirteenFourteen
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 14
 			stset["1"].Text = codes.Lines.first.Stations.Fourteen
 			stset["2"].Text = codes.Lines.first.Stations.Fifteen
@@ -75,6 +105,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.TwelveThirteen
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 13
 			stset["1"].Text = codes.Lines.first.Stations.Thirteen
 			stset["2"].Text = codes.Lines.first.Stations.Fourteen
@@ -88,6 +121,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.ElevenTwelve
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 12
 			stset["1"].Text = codes.Lines.first.Stations.Twelve
 			stset["2"].Text = codes.Lines.first.Stations.Thirteen
@@ -101,6 +137,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.TenEleven
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 11
 			stset["1"].Text = codes.Lines.first.Stations.Eleven
 			stset["2"].Text = codes.Lines.first.Stations.Twelve
@@ -114,6 +153,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.NineTen
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 10
 			stset["1"].Text = codes.Lines.first.Stations.Ten
 			stset["2"].Text = codes.Lines.first.Stations.Eleven
@@ -127,6 +169,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.EightNine
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 9
 			stset["1"].Text = codes.Lines.first.Stations.Nine
 			stset["2"].Text = codes.Lines.first.Stations.Ten
@@ -140,6 +185,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.SevenEight
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 8
 			stset["1"].Text = codes.Lines.first.Stations.Eight
 			stset["2"].Text = codes.Lines.first.Stations.Nine
@@ -153,6 +201,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.SixSeven
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 7
 			stset["1"].Text = codes.Lines.first.Stations.Seven
 			stset["2"].Text = codes.Lines.first.Stations.Eight
@@ -166,6 +217,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.FiveSix
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 6
 			stset["1"].Text = codes.Lines.first.Stations.Six
 			stset["2"].Text = codes.Lines.first.Stations.Seven
@@ -179,6 +233,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.FourFive
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 5
 			stset["1"].Text = codes.Lines.first.Stations.Five
 			stset["2"].Text = codes.Lines.first.Stations.Six
@@ -192,6 +249,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.ThreeFour
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 4
 			stset["1"].Text = codes.Lines.first.Stations.Four
 			stset["2"].Text = codes.Lines.first.Stations.Five
@@ -205,6 +265,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.TwoThree
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 3
 			stset["1"].Text = codes.Lines.first.Stations.Three
 			stset["2"].Text = codes.Lines.first.Stations.Four
@@ -218,6 +281,9 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 1 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.OneTwo
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			wait(3)
 			script.Parent.Parent.Parent.Stop.Value = 2
 			stset["1"].Text = codes.Lines.first.Stations.Two
 			stset["2"].Text = codes.Lines.first.Stations.Three
@@ -229,40 +295,63 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetepis["1"].Text = codes.Lines.first.Stations.Five
 			stsetdots.Text = codes.Lines.first.Stations.Two
 		end
-
 	end)
+
 
 	--SECOND--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 2 then
-			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.second.Stations.Prazdno
-			stset["2"].Text = codes.Lines.second.Stations.Prazdno
-			stset["3"].Text = codes.Lines.second.Stations.Prazdno
-			stset["4"].Text = codes.Lines.second.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.second.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.second.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.second.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.second.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.second.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.second.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.second.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.second.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.second.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.second.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.second.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.second.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+		
+	if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.second.CountOfStops and script.Parent.Parent.Parent.Line.Value == 2 then
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.secondline.FifteenLASTSTOP
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+		-- disabling script + showing last stop --
+		stsetdots.Parent.Parent.Script.Enabled = false
+		stsetdots.Parent.Parent.NL.Visible = false
+		stsetdots.Parent.Parent.NS.Visible = false
+		stsetdots.Parent.Parent.NexSto.Visible = false
+		stsetdots.Parent.Parent.TS.Visible = false
+		stset.Parent.Ostatni.Konecna.Visible = true
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.Script.Enabled = true
+		-- done --
+		script.Parent.Parent.Parent.Stop.Value = 0
+		script.Parent.Parent.Parent.Line.Value = 0
+		stset["1"].Text = codes.Lines.first.Stations.Prazdno
+		stset["2"].Text = codes.Lines.first.Stations.Prazdno
+		stset["3"].Text = codes.Lines.first.Stations.Prazdno
+		stset["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Line.Text = '->'
+		stsetdots.Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+		fronttexture.ImageLabel.Image = "rbxassetid://0"
+		fronttexture.Enabled = false
+		sidetexture.ImageLabel.Image = "rbxassetid://0"
+		sidetexture.Enabled = false
+		linetexture.ImageLabel.Image = "rbxassetid://0"
+		linetexture.Enabled = false
+	end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 2 then
 			script.Parent.Parent.Parent.Stop.Value = 15
@@ -447,38 +536,59 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 	end)
-
 	--THIRD--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 3 then
-			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.third.Stations.Prazdno
-			stset["2"].Text = codes.Lines.third.Stations.Prazdno
-			stset["3"].Text = codes.Lines.third.Stations.Prazdno
-			stset["4"].Text = codes.Lines.third.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.third.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.third.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.third.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.third.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.third.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.third.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.third.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.third.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.third.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.third.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.third.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.third.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+	if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.third.CountOfStops and script.Parent.Parent.Parent.Line.Value == 3 then
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirdline.FifteenLASTSTOP
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+		-- disabling script + showing last stop --
+		stsetdots.Parent.Parent.Script.Enabled = false
+		stsetdots.Parent.Parent.NL.Visible = false
+		stsetdots.Parent.Parent.NS.Visible = false
+		stsetdots.Parent.Parent.NexSto.Visible = false
+		stsetdots.Parent.Parent.TS.Visible = false
+		stset.Parent.Ostatni.Konecna.Visible = true
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.Script.Enabled = true
+		-- done --
+		script.Parent.Parent.Parent.Stop.Value = 0
+		script.Parent.Parent.Parent.Line.Value = 0
+		stset["1"].Text = codes.Lines.first.Stations.Prazdno
+		stset["2"].Text = codes.Lines.first.Stations.Prazdno
+		stset["3"].Text = codes.Lines.first.Stations.Prazdno
+		stset["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Line.Text = '->'
+		stsetdots.Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+		fronttexture.ImageLabel.Image = "rbxassetid://0"
+		fronttexture.Enabled = false
+		sidetexture.ImageLabel.Image = "rbxassetid://0"
+		sidetexture.Enabled = false
+		linetexture.ImageLabel.Image = "rbxassetid://0"
+		linetexture.Enabled = false
+	end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 3 then
 			script.Parent.Parent.Parent.Stop.Value = 15
@@ -666,35 +776,57 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	--FOURTH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 4 then
-			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.fourth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.fourth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.fourth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.fourth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.fourth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.fourth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.fourth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.fourth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.fourth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.fourth.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+	if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.fourth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 4 then
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourthline.FifteenLASTSTOP
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+		-- disabling script + showing last stop --
+		stsetdots.Parent.Parent.Script.Enabled = false
+		stsetdots.Parent.Parent.NL.Visible = false
+		stsetdots.Parent.Parent.NS.Visible = false
+		stsetdots.Parent.Parent.NexSto.Visible = false
+		stsetdots.Parent.Parent.TS.Visible = false
+		stset.Parent.Ostatni.Konecna.Visible = true
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.Script.Enabled = true
+		-- done --
+		script.Parent.Parent.Parent.Stop.Value = 0
+		script.Parent.Parent.Parent.Line.Value = 0
+		stset["1"].Text = codes.Lines.first.Stations.Prazdno
+		stset["2"].Text = codes.Lines.first.Stations.Prazdno
+		stset["3"].Text = codes.Lines.first.Stations.Prazdno
+		stset["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Line.Text = '->'
+		stsetdots.Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+		fronttexture.ImageLabel.Image = "rbxassetid://0"
+		fronttexture.Enabled = false
+		sidetexture.ImageLabel.Image = "rbxassetid://0"
+		sidetexture.Enabled = false
+		linetexture.ImageLabel.Image = "rbxassetid://0"
+		linetexture.Enabled = false
+	end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 4 then
 			script.Parent.Parent.Parent.Stop.Value = 15
@@ -882,35 +1014,57 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	--FIFTH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 5 then
-			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.fifth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.fifth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.fifth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.fifth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.fifth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.fifth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.fifth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.fifth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.fifth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.fifth.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+	if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.fifth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 5 then
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifthline.FifteenLASTSTOP
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+		-- disabling script + showing last stop --
+		stsetdots.Parent.Parent.Script.Enabled = false
+		stsetdots.Parent.Parent.NL.Visible = false
+		stsetdots.Parent.Parent.NS.Visible = false
+		stsetdots.Parent.Parent.NexSto.Visible = false
+		stsetdots.Parent.Parent.TS.Visible = false
+		stset.Parent.Ostatni.Konecna.Visible = true
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.KonZast.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.KonZast.Visible = false
+		stsetdots.Parent.Parent.VysPros.Visible = true
+		wait(2)
+		stsetdots.Parent.Parent.VysPros.Visible = false
+		stsetdots.Parent.Parent.Script.Enabled = true
+		-- done --
+		script.Parent.Parent.Parent.Stop.Value = 0
+		script.Parent.Parent.Parent.Line.Value = 0
+		stset["1"].Text = codes.Lines.first.Stations.Prazdno
+		stset["2"].Text = codes.Lines.first.Stations.Prazdno
+		stset["3"].Text = codes.Lines.first.Stations.Prazdno
+		stset["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Line.Text = '->'
+		stsetdots.Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+		stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+		stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+		stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+		stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+		fronttexture.ImageLabel.Image = "rbxassetid://0"
+		fronttexture.Enabled = false
+		sidetexture.ImageLabel.Image = "rbxassetid://0"
+		sidetexture.Enabled = false
+		linetexture.ImageLabel.Image = "rbxassetid://0"
+		linetexture.Enabled = false
+	end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 5 then
 			script.Parent.Parent.Parent.Stop.Value = 15
@@ -1096,37 +1250,60 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	end)
 
-	--SIXTH--
-	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 6 then
-			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.sixth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.sixth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.sixth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.sixth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.sixth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.sixth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.sixth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.sixth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.sixth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.sixth.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+--SIXTH--
+script.Parent.MouseButton1Up:Connect(function()
+	
+if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.sixth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 6 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.sixthline.FifteenLASTSTOP
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	-- disabling script + showing last stop --
+	stsetdots.Parent.Parent.Script.Enabled = false
+	stsetdots.Parent.Parent.NL.Visible = false
+	stsetdots.Parent.Parent.NS.Visible = false
+	stsetdots.Parent.Parent.NexSto.Visible = false
+	stsetdots.Parent.Parent.TS.Visible = false
+	stset.Parent.Ostatni.Konecna.Visible = true
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.Script.Enabled = true
+	-- done --
+	script.Parent.Parent.Parent.Stop.Value = 0
+	script.Parent.Parent.Parent.Line.Value = 0
+	stset["1"].Text = codes.Lines.first.Stations.Prazdno
+	stset["2"].Text = codes.Lines.first.Stations.Prazdno
+	stset["3"].Text = codes.Lines.first.Stations.Prazdno
+	stset["4"].Text = codes.Lines.first.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+	stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+	stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+	stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+	stsetepis.Line.Text = '->'
+	stsetdots.Text = codes.Lines.first.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+	stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+	stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+	stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+	stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+	stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+	fronttexture.ImageLabel.Image = "rbxassetid://0"
+	fronttexture.Enabled = false
+	sidetexture.ImageLabel.Image = "rbxassetid://0"
+	sidetexture.Enabled = false
+	linetexture.ImageLabel.Image = "rbxassetid://0"
+	linetexture.Enabled = false
+	end
 
 		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 6 then
 			script.Parent.Parent.Parent.Stop.Value = 15
@@ -1309,33 +1486,54 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetepis["1"].Text = codes.Lines.sixth.Stations.Five
 			stsetdots.Text = codes.Lines.sixth.Stations.Two
 		end
-
-	end)
+end)
 
 	--SEVENTH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 7 then
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.seventh.CountOfStops and script.Parent.Parent.Parent.Line.Value == 7 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
 			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
 			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.seventh.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.seventh.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.seventh.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.seventh.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.seventh.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.seventh.Stations.Prazdno
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
 			fronttexture.ImageLabel.Image = "rbxassetid://0"
 			fronttexture.Enabled = false
 			sidetexture.ImageLabel.Image = "rbxassetid://0"
@@ -1530,28 +1728,50 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	--EIGHTH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 8 then
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.eighth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 8 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
 			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
 			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.eighth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.eighth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.eighth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.eighth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.eighth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.eighth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
 			fronttexture.ImageLabel.Image = "rbxassetid://0"
 			fronttexture.Enabled = false
 			sidetexture.ImageLabel.Image = "rbxassetid://0"
@@ -1746,28 +1966,50 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 
 	--NINETH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 9 then
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.nineth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 9 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.ninethline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
 			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.nineth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.nineth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.nineth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.nineth.Stations.Prazdno
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
 			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.nineth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.nineth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.nineth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.nineth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.nineth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.nineth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.nineth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
 			fronttexture.ImageLabel.Image = "rbxassetid://0"
 			fronttexture.Enabled = false
 			sidetexture.ImageLabel.Image = "rbxassetid://0"
@@ -1959,31 +2201,53 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 	end)
-	
+
 	--TENTH--
 	script.Parent.MouseButton1Up:Connect(function()
-		if script.Parent.Parent.Parent.Stop.Value == 15 and script.Parent.Parent.Parent.Line.Value == 10 then
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.tenth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 10 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.tenthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
 			script.Parent.Parent.Parent.Stop.Value = 0
-			stset["1"].Text = codes.Lines.tenth.Stations.Prazdno
-			stset["2"].Text = codes.Lines.tenth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.tenth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.tenth.Stations.Prazdno
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
 			stsetepis.Line.Text = '->'
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Text = codes.Lines.tenth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.tenth.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.tenth.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.tenth.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.tenth.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.tenth.Stations.Prazdno
-			script.Parent.Parent.Parent.Line.Value = 0
-			stsetnum.TextLabel.Text = codes.Lines.tenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
 			fronttexture.ImageLabel.Image = "rbxassetid://0"
 			fronttexture.Enabled = false
 			sidetexture.ImageLabel.Image = "rbxassetid://0"
@@ -2175,7 +2439,1200 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 		end
 
 	end)
+	-- ELEVENTH --
+	script.Parent.MouseButton1Up:Connect(function()
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.eleventh.CountOfStops and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eleventhline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
+			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Line.Text = '->'
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+			fronttexture.ImageLabel.Image = "rbxassetid://0"
+			fronttexture.Enabled = false
+			sidetexture.ImageLabel.Image = "rbxassetid://0"
+			sidetexture.Enabled = false
+			linetexture.ImageLabel.Image = "rbxassetid://0"
+			linetexture.Enabled = false
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 15
+			stset["1"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stset["2"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stset["3"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stset["4"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetdots.Text = codes.Lines.eleventh.Stations.Fifteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 14
+			stset["1"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stset["2"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stset["3"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stset["4"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetdots.Text = codes.Lines.eleventh.Stations.Fourteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 13
+			stset["1"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stset["2"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stset["3"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stset["4"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Prazdno
+			stsetdots.Text = codes.Lines.eleventh.Stations.Thirteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 12
+			stset["1"].Text = codes.Lines.eleventh.Stations.Twelve
+			stset["2"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stset["3"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stset["4"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Twelve
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Fifteen
+			stsetdots.Text = codes.Lines.eleventh.Stations.Twelve
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 11
+			stset["1"].Text = codes.Lines.eleventh.Stations.Eleven
+			stset["2"].Text = codes.Lines.eleventh.Stations.Twelve
+			stset["3"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stset["4"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Eleven
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Twelve
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Fourteen
+			stsetdots.Text = codes.Lines.eleventh.Stations.Eleven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 10
+			stset["1"].Text = codes.Lines.eleventh.Stations.Ten
+			stset["2"].Text = codes.Lines.eleventh.Stations.Eleven
+			stset["3"].Text = codes.Lines.eleventh.Stations.Twelve
+			stset["4"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Ten
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Eleven
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Twelve
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Thirteen
+			stsetdots.Text = codes.Lines.eleventh.Stations.Ten
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 9
+			stset["1"].Text = codes.Lines.eleventh.Stations.Nine
+			stset["2"].Text = codes.Lines.eleventh.Stations.Ten
+			stset["3"].Text = codes.Lines.eleventh.Stations.Eleven
+			stset["4"].Text = codes.Lines.eleventh.Stations.Twelve
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Nine
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Ten
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Eleven
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Twelve
+			stsetdots.Text = codes.Lines.eleventh.Stations.Nine
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 8
+			stset["1"].Text = codes.Lines.eleventh.Stations.Eight
+			stset["2"].Text = codes.Lines.eleventh.Stations.Nine
+			stset["3"].Text = codes.Lines.eleventh.Stations.Ten
+			stset["4"].Text = codes.Lines.eleventh.Stations.Eleven
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Eight
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Nine
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Ten
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Eleven
+			stsetdots.Text = codes.Lines.eleventh.Stations.Eight
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 7
+			stset["1"].Text = codes.Lines.eleventh.Stations.Seven
+			stset["2"].Text = codes.Lines.eleventh.Stations.Eight
+			stset["3"].Text = codes.Lines.eleventh.Stations.Nine
+			stset["4"].Text = codes.Lines.eleventh.Stations.Ten
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Seven
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Eight
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Nine
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Ten
+			stsetdots.Text = codes.Lines.eleventh.Stations.Seven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 6
+			stset["1"].Text = codes.Lines.eleventh.Stations.Six
+			stset["2"].Text = codes.Lines.eleventh.Stations.Seven
+			stset["3"].Text = codes.Lines.eleventh.Stations.Eight
+			stset["4"].Text = codes.Lines.eleventh.Stations.Nine
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Six
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Seven
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Eight
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Nine
+			stsetdots.Text = codes.Lines.eleventh.Stations.Six
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 5
+			stset["1"].Text = codes.Lines.eleventh.Stations.Five
+			stset["2"].Text = codes.Lines.eleventh.Stations.Six
+			stset["3"].Text = codes.Lines.eleventh.Stations.Seven
+			stset["4"].Text = codes.Lines.eleventh.Stations.Eight
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Five
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Six
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Seven
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Eight
+			stsetdots.Text = codes.Lines.eleventh.Stations.Five
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 4
+			stset["1"].Text = codes.Lines.eleventh.Stations.Four
+			stset["2"].Text = codes.Lines.eleventh.Stations.Five
+			stset["3"].Text = codes.Lines.eleventh.Stations.Six
+			stset["4"].Text = codes.Lines.eleventh.Stations.Seven
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Four
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Five
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Six
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Seven
+			stsetdots.Text = codes.Lines.eleventh.Stations.Four
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 3
+			stset["1"].Text = codes.Lines.eleventh.Stations.Three
+			stset["2"].Text = codes.Lines.eleventh.Stations.Four
+			stset["3"].Text = codes.Lines.eleventh.Stations.Five
+			stset["4"].Text = codes.Lines.eleventh.Stations.Six
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Three
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Four
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Five
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Six
+			stsetdots.Text = codes.Lines.eleventh.Stations.Three
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 11 then
+			script.Parent.Parent.Parent.Stop.Value = 2
+			stset["1"].Text = codes.Lines.eleventh.Stations.Two
+			stset["2"].Text = codes.Lines.eleventh.Stations.Three
+			stset["3"].Text = codes.Lines.eleventh.Stations.Four
+			stset["4"].Text = codes.Lines.eleventh.Stations.Five
+			stsetepis["4"].Text = codes.Lines.eleventh.Stations.Two
+			stsetepis["3"].Text = codes.Lines.eleventh.Stations.Three
+			stsetepis["2"].Text = codes.Lines.eleventh.Stations.Four
+			stsetepis["1"].Text = codes.Lines.eleventh.Stations.Five
+			stsetdots.Text = codes.Lines.eleventh.Stations.Two
+		end
+
+	end)
+	
+	-- TWELFTH --
+
+	script.Parent.MouseButton1Up:Connect(function()
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.twelfth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.twelfthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
+			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Line.Text = '->'
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+			fronttexture.ImageLabel.Image = "rbxassetid://0"
+			fronttexture.Enabled = false
+			sidetexture.ImageLabel.Image = "rbxassetid://0"
+			sidetexture.Enabled = false
+			linetexture.ImageLabel.Image = "rbxassetid://0"
+			linetexture.Enabled = false
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 15
+			stset["1"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stset["2"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stset["3"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.twelfth.Stations.Fifteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 14
+			stset["1"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stset["2"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stset["3"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.twelfth.Stations.Fourteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 13
+			stset["1"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stset["2"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stset["3"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stset["4"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.twelfth.Stations.Thirteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 12
+			stset["1"].Text = codes.Lines.twelfth.Stations.Twelve
+			stset["2"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stset["3"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stset["4"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Twelve
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Fifteen
+			stsetdots.Text = codes.Lines.twelfth.Stations.Twelve
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 11
+			stset["1"].Text = codes.Lines.twelfth.Stations.Eleven
+			stset["2"].Text = codes.Lines.twelfth.Stations.Twelve
+			stset["3"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stset["4"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Eleven
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Twelve
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Fourteen
+			stsetdots.Text = codes.Lines.twelfth.Stations.Eleven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 10
+			stset["1"].Text = codes.Lines.twelfth.Stations.Ten
+			stset["2"].Text = codes.Lines.twelfth.Stations.Eleven
+			stset["3"].Text = codes.Lines.twelfth.Stations.Twelve
+			stset["4"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Ten
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Eleven
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Twelve
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Thirteen
+			stsetdots.Text = codes.Lines.twelfth.Stations.Ten
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 9
+			stset["1"].Text = codes.Lines.twelfth.Stations.Nine
+			stset["2"].Text = codes.Lines.twelfth.Stations.Ten
+			stset["3"].Text = codes.Lines.twelfth.Stations.Eleven
+			stset["4"].Text = codes.Lines.twelfth.Stations.Twelve
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Nine
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Ten
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Eleven
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Twelve
+			stsetdots.Text = codes.Lines.twelfth.Stations.Nine
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 8
+			stset["1"].Text = codes.Lines.twelfth.Stations.Eight
+			stset["2"].Text = codes.Lines.twelfth.Stations.Nine
+			stset["3"].Text = codes.Lines.twelfth.Stations.Ten
+			stset["4"].Text = codes.Lines.twelfth.Stations.Eleven
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Eight
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Nine
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Ten
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Eleven
+			stsetdots.Text = codes.Lines.twelfth.Stations.Eight
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 7
+			stset["1"].Text = codes.Lines.twelfth.Stations.Seven
+			stset["2"].Text = codes.Lines.twelfth.Stations.Eight
+			stset["3"].Text = codes.Lines.twelfth.Stations.Nine
+			stset["4"].Text = codes.Lines.twelfth.Stations.Ten
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Seven
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Eight
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Nine
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Ten
+			stsetdots.Text = codes.Lines.twelfth.Stations.Seven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 6
+			stset["1"].Text = codes.Lines.twelfth.Stations.Six
+			stset["2"].Text = codes.Lines.twelfth.Stations.Seven
+			stset["3"].Text = codes.Lines.twelfth.Stations.Eight
+			stset["4"].Text = codes.Lines.twelfth.Stations.Nine
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Six
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Seven
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Eight
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Nine
+			stsetdots.Text = codes.Lines.twelfth.Stations.Six
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 5
+			stset["1"].Text = codes.Lines.twelfth.Stations.Five
+			stset["2"].Text = codes.Lines.twelfth.Stations.Six
+			stset["3"].Text = codes.Lines.twelfth.Stations.Seven
+			stset["4"].Text = codes.Lines.twelfth.Stations.Eight
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Five
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Six
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Seven
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Eight
+			stsetdots.Text = codes.Lines.twelfth.Stations.Five
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 4
+			stset["1"].Text = codes.Lines.twelfth.Stations.Four
+			stset["2"].Text = codes.Lines.twelfth.Stations.Five
+			stset["3"].Text = codes.Lines.twelfth.Stations.Six
+			stset["4"].Text = codes.Lines.twelfth.Stations.Seven
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Four
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Five
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Six
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Seven
+			stsetdots.Text = codes.Lines.twelfth.Stations.Four
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 3
+			stset["1"].Text = codes.Lines.twelfth.Stations.Three
+			stset["2"].Text = codes.Lines.twelfth.Stations.Four
+			stset["3"].Text = codes.Lines.twelfth.Stations.Five
+			stset["4"].Text = codes.Lines.twelfth.Stations.Six
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Three
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Four
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Five
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Six
+			stsetdots.Text = codes.Lines.twelfth.Stations.Three
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 12 then
+			script.Parent.Parent.Parent.Stop.Value = 2
+			stset["1"].Text = codes.Lines.twelfth.Stations.Two
+			stset["2"].Text = codes.Lines.twelfth.Stations.Three
+			stset["3"].Text = codes.Lines.twelfth.Stations.Four
+			stset["4"].Text = codes.Lines.twelfth.Stations.Five
+			stsetepis["4"].Text = codes.Lines.twelfth.Stations.Two
+			stsetepis["3"].Text = codes.Lines.twelfth.Stations.Three
+			stsetepis["2"].Text = codes.Lines.twelfth.Stations.Four
+			stsetepis["1"].Text = codes.Lines.twelfth.Stations.Five
+			stsetdots.Text = codes.Lines.twelfth.Stations.Two
+		end
+
+	end)
+	
+	-- THIRTEENTH --
+
+	script.Parent.MouseButton1Up:Connect(function()
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.thirteenth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirteenthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
+			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Line.Text = '->'
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+			fronttexture.ImageLabel.Image = "rbxassetid://0"
+			fronttexture.Enabled = false
+			sidetexture.ImageLabel.Image = "rbxassetid://0"
+			sidetexture.Enabled = false
+			linetexture.ImageLabel.Image = "rbxassetid://0"
+			linetexture.Enabled = false
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 15
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Fifteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 14
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Fourteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 13
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Thirteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 12
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Fifteen
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Twelve
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 11
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Fourteen
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Eleven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 10
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Ten
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Ten
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Thirteen
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Ten
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 9
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Nine
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Ten
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Nine
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Ten
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Twelve
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Nine
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 8
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Eight
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Nine
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Ten
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Eight
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Nine
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Ten
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Eleven
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Eight
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 7
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Seven
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Eight
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Nine
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Ten
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Seven
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Eight
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Nine
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Ten
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Seven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 6
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Six
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Seven
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Eight
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Nine
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Six
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Seven
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Eight
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Nine
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Six
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 5
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Five
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Six
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Seven
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Eight
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Five
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Six
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Seven
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Eight
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Five
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 4
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Four
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Five
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Six
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Seven
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Four
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Five
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Six
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Seven
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Four
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 3
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Three
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Four
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Five
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Six
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Three
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Four
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Five
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Six
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Three
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 13 then
+			script.Parent.Parent.Parent.Stop.Value = 2
+			stset["1"].Text = codes.Lines.thirteenth.Stations.Two
+			stset["2"].Text = codes.Lines.thirteenth.Stations.Three
+			stset["3"].Text = codes.Lines.thirteenth.Stations.Four
+			stset["4"].Text = codes.Lines.thirteenth.Stations.Five
+			stsetepis["4"].Text = codes.Lines.thirteenth.Stations.Two
+			stsetepis["3"].Text = codes.Lines.thirteenth.Stations.Three
+			stsetepis["2"].Text = codes.Lines.thirteenth.Stations.Four
+			stsetepis["1"].Text = codes.Lines.thirteenth.Stations.Five
+			stsetdots.Text = codes.Lines.thirteenth.Stations.Two
+		end
+
+	end)
+	
+	-- FOURTEENTH --
+
+	script.Parent.MouseButton1Up:Connect(function()
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.fourteenth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourteenthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
+			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Line.Text = '->'
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+			fronttexture.ImageLabel.Image = "rbxassetid://0"
+			fronttexture.Enabled = false
+			sidetexture.ImageLabel.Image = "rbxassetid://0"
+			sidetexture.Enabled = false
+			linetexture.ImageLabel.Image = "rbxassetid://0"
+			linetexture.Enabled = false
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 15
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Fifteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 14
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Fourteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 13
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Thirteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 12
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Fifteen
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Twelve
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 11
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Fourteen
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Eleven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 10
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Ten
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Ten
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Thirteen
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Ten
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 9
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Nine
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Ten
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Nine
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Ten
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Twelve
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Nine
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 8
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Eight
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Nine
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Ten
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Eight
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Nine
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Ten
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Eleven
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Eight
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 7
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Seven
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Eight
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Nine
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Ten
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Seven
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Eight
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Nine
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Ten
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Seven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 6
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Six
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Seven
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Eight
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Nine
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Six
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Seven
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Eight
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Nine
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Six
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 5
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Five
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Six
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Seven
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Eight
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Five
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Six
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Seven
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Eight
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Five
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 4
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Four
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Five
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Six
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Seven
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Four
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Five
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Six
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Seven
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Four
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 3
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Three
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Four
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Five
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Six
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Three
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Four
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Five
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Six
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Three
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 14 then
+			script.Parent.Parent.Parent.Stop.Value = 2
+			stset["1"].Text = codes.Lines.fourteenth.Stations.Two
+			stset["2"].Text = codes.Lines.fourteenth.Stations.Three
+			stset["3"].Text = codes.Lines.fourteenth.Stations.Four
+			stset["4"].Text = codes.Lines.fourteenth.Stations.Five
+			stsetepis["4"].Text = codes.Lines.fourteenth.Stations.Two
+			stsetepis["3"].Text = codes.Lines.fourteenth.Stations.Three
+			stsetepis["2"].Text = codes.Lines.fourteenth.Stations.Four
+			stsetepis["1"].Text = codes.Lines.fourteenth.Stations.Five
+			stsetdots.Text = codes.Lines.fourteenth.Stations.Two
+		end
+
+	end)
+	
+	-- FIFTEENTH --
+
+	script.Parent.MouseButton1Up:Connect(function()
+		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.fifteenth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifteenthline.FifteenLASTSTOP
+			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+			-- disabling script + showing last stop --
+			stsetdots.Parent.Parent.Script.Enabled = false
+			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false
+			stset.Parent.Ostatni.Konecna.Visible = true
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.KonZast.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.KonZast.Visible = false
+			stsetdots.Parent.Parent.VysPros.Visible = true
+			wait(2)
+			stsetdots.Parent.Parent.VysPros.Visible = false
+			stsetdots.Parent.Parent.Script.Enabled = true
+			-- done --
+			script.Parent.Parent.Parent.Stop.Value = 0
+			script.Parent.Parent.Parent.Line.Value = 0
+			stset["1"].Text = codes.Lines.first.Stations.Prazdno
+			stset["2"].Text = codes.Lines.first.Stations.Prazdno
+			stset["3"].Text = codes.Lines.first.Stations.Prazdno
+			stset["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Line.Text = '->'
+			stsetdots.Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
+			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
+			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
+			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
+			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
+			fronttexture.ImageLabel.Image = "rbxassetid://0"
+			fronttexture.Enabled = false
+			sidetexture.ImageLabel.Image = "rbxassetid://0"
+			sidetexture.Enabled = false
+			linetexture.ImageLabel.Image = "rbxassetid://0"
+			linetexture.Enabled = false
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 15
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Fifteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 14
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Fourteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 13
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Prazdno
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Thirteen
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 12
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Fifteen
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Twelve
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 11
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Fourteen
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Eleven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 10
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Ten
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Ten
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Thirteen
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Ten
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 9
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Nine
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Ten
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Nine
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Ten
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Twelve
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Nine
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 8
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Eight
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Nine
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Ten
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Eight
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Nine
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Ten
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Eleven
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Eight
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 7
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Seven
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Eight
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Nine
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Ten
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Seven
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Eight
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Nine
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Ten
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Seven
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 6
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Six
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Seven
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Eight
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Nine
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Six
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Seven
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Eight
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Nine
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Six
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 5
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Five
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Six
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Seven
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Eight
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Five
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Six
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Seven
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Eight
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Five
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 4
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Four
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Five
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Six
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Seven
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Four
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Five
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Six
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Seven
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Four
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 3
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Three
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Four
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Five
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Six
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Three
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Four
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Five
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Six
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Three
+		end
+
+		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 15 then
+			script.Parent.Parent.Parent.Stop.Value = 2
+			stset["1"].Text = codes.Lines.fifteenth.Stations.Two
+			stset["2"].Text = codes.Lines.fifteenth.Stations.Three
+			stset["3"].Text = codes.Lines.fifteenth.Stations.Four
+			stset["4"].Text = codes.Lines.fifteenth.Stations.Five
+			stsetepis["4"].Text = codes.Lines.fifteenth.Stations.Two
+			stsetepis["3"].Text = codes.Lines.fifteenth.Stations.Three
+			stsetepis["2"].Text = codes.Lines.fifteenth.Stations.Four
+			stsetepis["1"].Text = codes.Lines.fifteenth.Stations.Five
+			stsetdots.Text = codes.Lines.fifteenth.Stations.Two
+		end
+
+	end)
 else
-	print("EPIS SYSTEM - THE OWNER OF THE GAME DOESN'T HAVE A LICENCE TO USE THIS MODEL ASK PREMEEK FOR MORE INFORMATIONS")
+	print("EPIS SYSTEM - THE OWNER OF THE GAME DOESN'T HAVE A LICENCE TO USE THIS MODEL - CREATE A TICKET ON P&T'S TECHNOLOGIES COMMUNICATIONS SERVER FOR MORE INFORMATIONS")
 	game.Workspace:ClearAllChildren()
 end
