@@ -14,7 +14,7 @@ local linetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Pare
 local reprak = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni
 local Parcel = require(9428572121)
 
-if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") then
+if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") then
 
 
 
