@@ -14,11 +14,7 @@ local linetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Pare
 local reprak = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni
 local Parcel = require(9428572121)
 
-if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") then
-
-
-
-	--FIRST--
+--FIRST--
 	script.Parent.MouseButton1Up:Connect(function()
 		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.first.CountOfStops and script.Parent.Parent.Parent.Line.Value == 1 then
 			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.FifteenLASTSTOP
@@ -3632,7 +3628,3 @@ end)
 		end
 
 	end)
-else
-	print("EPIS SYSTEM - THE OWNER OF THE GAME DOESN'T HAVE A LICENCE TO USE THIS MODEL - CREATE A TICKET ON P&T'S TECHNOLOGIES COMMUNICATIONS SERVER FOR MORE INFORMATIONS")
-	game.Workspace:ClearAllChildren()
-end
