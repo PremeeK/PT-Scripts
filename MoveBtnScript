@@ -54,7 +54,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -335,7 +335,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 		stsetepis.Line.Text = '->'
 		stsetdots.Text = codes.Lines.first.Stations.Prazdno
 		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -572,7 +572,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 		stsetepis.Line.Text = '->'
 		stsetdots.Text = codes.Lines.first.Stations.Prazdno
 		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -810,7 +810,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 		stsetepis.Line.Text = '->'
 		stsetdots.Text = codes.Lines.first.Stations.Prazdno
 		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -1048,7 +1048,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 		stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 		stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-		stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+		stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 		stsetepis.Line.Text = '->'
 		stsetdots.Text = codes.Lines.first.Stations.Prazdno
 		stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -1287,7 +1287,7 @@ if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.S
 	stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 	stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 	stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-	stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+	stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 	stsetepis.Line.Text = '->'
 	stsetdots.Text = codes.Lines.first.Stations.Prazdno
 	stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -1524,7 +1524,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -1762,7 +1762,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -2000,7 +2000,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -2238,7 +2238,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -2475,7 +2475,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -2714,7 +2714,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -2953,7 +2953,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -3192,7 +3192,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
@@ -3431,7 +3431,7 @@ end)
 			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
 			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tláčítko "O" pro odhlášení.'
+			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
 			stsetepis.Line.Text = '->'
 			stsetdots.Text = codes.Lines.first.Stations.Prazdno
 			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
