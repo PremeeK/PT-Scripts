@@ -31,6 +31,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
@@ -312,6 +313,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
@@ -550,6 +552,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
@@ -788,7 +791,8 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
-			stsetdots.Parent.Parent.TS.Visible = false
+			stsetdots.Parent.Parent.TS.Visible = false 
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
 			wait(2)
@@ -1025,6 +1029,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
@@ -1265,6 +1270,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
@@ -1502,6 +1508,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
@@ -1738,6 +1745,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			-- disabling script + showing last stop --
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
@@ -1976,6 +1984,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			-- disabling script + showing last stop --
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
@@ -2215,6 +2224,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
@@ -2451,6 +2461,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			-- disabling script + showing last stop --
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
@@ -2692,6 +2703,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
@@ -2929,6 +2941,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			-- disabling script + showing last stop --
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
@@ -3169,6 +3182,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.Script.Enabled = false
 			stsetdots.Parent.Parent.NL.Visible = false
 			stsetdots.Parent.Parent.NS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
@@ -3410,6 +3424,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") 
 			stsetdots.Parent.Parent.NS.Visible = false
 			stsetdots.Parent.Parent.NexSto.Visible = false
 			stsetdots.Parent.Parent.TS.Visible = false
+			stsetdots.Parent.Parent.Cas.Visible = false
 			stset.Parent.Ostatni.Konecna.Visible = true
 			stsetdots.Parent.Parent.KonZast.Visible = true
 			wait(2)
