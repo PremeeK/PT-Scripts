@@ -1,1 +1,779 @@
-
+local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
+local beep = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Svetylka.On.beep
+script.Parent.MouseButton1Up:Connect(function()
+	beep:Play()
+	if codes.Lines.first.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the name--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.first.Dest 
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.first.Name
+		--disabling and enabling visibility of the guis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.first.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.first.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.first.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.first.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.first.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.first.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.first.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.first.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.first.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.first.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 1
+		--showing the dest, line & next stop on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.first.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.first.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.first.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.first.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.first.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.first.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.first.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.first.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.first.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.first.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.first.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		wait(5)
+		--hlaseni--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.firstline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	if codes.Lines.second.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the name--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.second.Dest 
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.second.Name
+		--disabling and enabling visibility of the guis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.second.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.second.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.second.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.second.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.second.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.second.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.second.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.second.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.second.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.second.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 2
+		--showing the dest, line & next stop on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.second.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.second.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.second.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.second.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.second.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.second.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.second.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.second.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.second.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.second.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.second.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.secondline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.secondline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	if codes.Lines.third.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.third.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.third.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.third.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.third.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.third.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.third.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.third.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.third.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.third.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.third.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.third.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.third.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 3
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.third.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.third.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.third.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.third.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.third.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.third.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.third.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.third.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.third.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.third.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.third.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirdline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirdline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	if codes.Lines.fourth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.fourth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.fourth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.fourth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.fourth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.fourth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.fourth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.fourth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.fourth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.fourth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.fourth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.fourth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.fourth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 4
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.fourth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.fourth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.fourth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.fourth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.fourth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.fourth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.fourth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.fourth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.fourth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.fourth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.fourth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	if codes.Lines.fifth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.fifth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.fifth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.fifth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.fifth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.fifth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.fifth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.fifth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.fifth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.fifth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.fifth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.fifth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.fifth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 5
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.fifth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.fifth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.fifth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.fifth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.fifth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.fifth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.fifth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.fifth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.fifth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.fifth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.fifth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	if codes.Lines.sixth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.sixth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.sixth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.sixth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.sixth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.sixth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.sixth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.sixth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.sixth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.sixth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.sixth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.sixth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.sixth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 6
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.sixth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.sixth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.sixth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.sixth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.sixth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.sixth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.sixth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.sixth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.sixth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.sixth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.sixth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.sixthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.sixthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.seventh.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.seventh.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.seventh.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.seventh.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.seventh.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.seventh.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.seventh.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.seventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.seventh.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.seventh.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.seventh.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.seventh.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.seventh.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 7
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.seventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.seventh.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.seventh.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.seventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.seventh.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.seventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.seventh.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.seventh.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.seventh.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.seventh.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.seventh.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.eighth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.eighth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.eighth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.eighth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.eighth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.eighth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.eighth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.eighth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.eighth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.eighth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.eighth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.eighth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.eighth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 8
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.eighth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.eighth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.eighth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.eighth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.eighth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.eighth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.eighth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.eighth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.eighth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.eighth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.eighth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.nineth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.nineth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.nineth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.nineth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.nineth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.nineth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.nineth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.nineth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.nineth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.nineth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.nineth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.nineth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.nineth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 9
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.nineth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.nineth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.nineth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.nineth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.nineth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.nineth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.nineth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.nineth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.nineth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.nineth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.nineth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.ninethline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.ninethline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.tenth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.tenth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.tenth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.tenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.tenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.tenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.tenth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.tenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.tenth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.tenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.tenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.tenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.tenth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 10
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.tenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.tenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.tenth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.tenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.tenth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.tenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.tenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.tenth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.tenth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.tenth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.tenth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.tenthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.tenthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.eleventh.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.eleventh.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.eleventh.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.eleventh.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.eleventh.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.eleventh.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.eleventh.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.eleventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.eleventh.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.eleventh.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.eleventh.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.eleventh.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.eleventh.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 11
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.eleventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.eleventh.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.eleventh.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.eleventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.eleventh.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.eleventh.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.eleventh.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.eleventh.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.eleventh.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.eleventh.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.eleventh.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eleventhline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eleventhline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.twelfth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.twelfth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.twelfth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.twelfth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.twelfth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.twelfth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.twelfth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.twelfth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.twelfth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.twelfth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.twelfth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.twelfth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.twelfth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 12
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.twelfth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.twelfth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.twelfth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.twelfth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.twelfth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.twelfth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.twelfth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.twelfth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.twelfth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.twelfth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.twelfth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.twelfthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.twelfthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.thirteenth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.thirteenth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.thirteenth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.thirteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.thirteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.thirteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.thirteenth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.thirteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.thirteenth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.thirteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.thirteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.thirteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.thirteenth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 13
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.thirteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.thirteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.thirteenth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.thirteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.thirteenth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.thirteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.thirteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.thirteenth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.thirteenth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.thirteenth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.thirteenth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirteenthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.thirteenthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.fourteenth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.fourteenth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.fourteenth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.fourteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.fourteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.fourteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.fourteenth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.fourteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.fourteenth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.fourteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.fourteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.fourteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.fourteenth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 14
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.fourteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.fourteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.fourteenth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.fourteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.fourteenth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.fourteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.fourteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.fourteenth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.fourteenth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.fourteenth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.fourteenth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourteenthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fourteenthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+	
+	if codes.Lines.fifteenth.Login == script.Parent.Parent.Parent.CodeEnter.Text then
+		--setting the dest and the line on epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops.Dest.Text = codes.Lines.fifteenth.Dest
+		script.Parent.Parent.Parent.Parent.Main.Stops.Line.Text = codes.Lines.fifteenth.Name
+		--disabling and enabling visibility of the guis on epis--
+		script.Parent.Parent.Parent.Parent.LineNumber.Visible = false
+		script.Parent.Parent.Parent.Parent.Main.Visible = true
+		--showing the stops on the epis--
+		script.Parent.Parent.Parent.Parent.Main.Stops["4"].Text = codes.Lines.fifteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Main.Stops["3"].Text = codes.Lines.fifteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Main.Stops["2"].Text = codes.Lines.fifteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Main.Stops["1"].Text = codes.Lines.fifteenth.Stations.Four
+		--setting the check on--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Script.Disabled = true
+		--setting the dest and the line on buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Linka.Text = codes.Lines.fifteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui["L&D"].Destinace.Text = codes.Lines.fifteenth.Dest
+		--showing the stops on the buse--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["1"].Text = codes.Lines.fifteenth.Stations.One
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["2"].Text = codes.Lines.fifteenth.Stations.Two
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["3"].Text = codes.Lines.fifteenth.Stations.Three
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky["4"].Text = codes.Lines.fifteenth.Stations.Four
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Stop.Value = 1
+		script.Parent.Parent.Parent.Parent.Parent.Screen.Main.Line.Value = 15
+		--showing the dest, line & next stop on the buse --
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["1"].Text = codes.Lines.fifteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NL["2"].Text = codes.Lines.fifteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.DOTTEDBUSE.Screen.GUIs.NS["2"].Text = codes.Lines.fifteenth.Stations.One
+		--showing the dest & line on the outside panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.L.Text = codes.Lines.fifteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.GUIs.D.Text = codes.Lines.fifteenth.Dest
+		--showing the dest & line on the outside side panels--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.L.Text = codes.Lines.fifteenth.Name
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.GUIs.D.Text = codes.Lines.fifteenth.Dest
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.TextLabel.Text = codes.Lines.fifteenth.Name
+		--textures--
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.ImageLabel.Image = codes.Lines.fifteenth.Textura
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.ImageLabel.Image = codes.Lines.fifteenth.TexturaBocni
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.OUTSIDEBUSESIDE.Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.ImageLabel.Image = codes.Lines.fifteenth.TexturaLinka
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury.Enabled = true
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.GUI.Enabled = false
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifteenthline.OneTwo
+		--setitng text back to Enter the code...--
+		script.Parent.Parent.Parent.CodeEnter.Text = "Enter the code.."
+		--hlaseni--
+		wait(5)
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.fifteenthline.BeforeRunDriverAnnouncement
+		script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	end
+end)
