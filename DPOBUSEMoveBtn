@@ -18,8 +18,6 @@ local Parcel = require(9428572121)
 local beep = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Svetylka.On.beep
 local beeptwo = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Svetylka.On.beeptwo
 
-if Parcel:Whitelist("6333f060ed3f6516455a91a1", "fqnb5bl536p2dbquba0fd2if41eu") then
-
 	script.Parent.MouseButton1Up:Connect(function()
 		beep:Play()
 	end)
@@ -4294,7 +4292,3 @@ end
 		end
 
 	end)
-else
-	print("EPIS SYSTEM - THE OWNER OF THE GAME DOESN'T HAVE A LICENCE TO USE THIS MODEL - CREATE A TICKET ON P&T'S TECHNOLOGIES COMMUNICATIONS SERVER FOR MORE INFORMATIONS")
-	game.Workspace:ClearAllChildren()
-end
