@@ -2142,478 +2142,748 @@ end
 	--SEVENTH--
 	script.Parent.MouseButton1Up:Connect(function()
 		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.seventh.CountOfStops and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FifteenLASTSTOP
-			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
-			-- disabling script + showing last stop --
-			stsetdots.Parent.Parent.Script.Enabled = false
-			stsetdots.Parent.Parent.NL.Visible = false
-			stsetdots.Parent.Parent.NS.Visible = false
-			stsetdots.Parent.Parent.NexSto.Visible = false
-			stsetdots.Parent.Parent.Cas.Visible = false
-			stsetdots.Parent.Parent.TS.Visible = false
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Parent.Parent.KonZast.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.KonZast.Visible = false
-			stsetdots.Parent.Parent.VysPros.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.VysPros.Visible = false
-			stsetdots.Parent.Parent.KonZast.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.KonZast.Visible = false
-			stsetdots.Parent.Parent.VysPros.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.VysPros.Visible = false
-			stsetdots.Parent.Parent.Script.Enabled = true
-			-- done --
-			script.Parent.Parent.Parent.Stop.Value = 0
-			script.Parent.Parent.Parent.Line.Value = 0
-			stset["1"].Text = codes.Lines.first.Stations.Prazdno
-			stset["2"].Text = codes.Lines.first.Stations.Prazdno
-			stset["3"].Text = codes.Lines.first.Stations.Prazdno
-			stset["4"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stsetdots.Text = codes.Lines.first.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
-			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FifteenLASTSTOP
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	-- disabling script + showing last stop --
+	stsetdots.Parent.Parent.Script.Enabled = false
+	stsetdots.Parent.Parent.NL.Visible = false
+	stsetdots.Parent.Parent.NS.Visible = false
+	stsetdots.Parent.Parent.Cas.Visible = false
+	stsetdots.Parent.Parent.NexSto.Visible = false
+	stsetdots.Parent.Parent.TS.Visible = false
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.Script.Enabled = true
+	-- done --
+	script.Parent.Parent.Parent.Stop.Value = 0
+	script.Parent.Parent.Parent.Line.Value = 0
+	stset["0"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset.Parent["L&D"].Linka.Text = codes.Lines.seventh.Stations.Prazdno
+	stset.Parent["L&D"].Destinace.Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo.Parent["L&D"].Linka.Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo.Parent["L&D"].Destinace.Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
+	stsetepis.Line.Text = '->'
+	stsetdots.Text = codes.Lines.seventh.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetout.D.Text = codes.Lines.seventh.Stations.Prazdno
+	stsetout.L.Text = codes.Lines.seventh.Stations.Prazdno
+	stsetside.D.Text = codes.Lines.seventh.Stations.Prazdno
+	stsetside.L.Text = codes.Lines.seventh.Stations.Prazdno
+	stsetnum.TextLabel.Text = codes.Lines.seventh.Stations.Prazdno
+	fronttexture.ImageLabel.Image = "rbxassetid://0"
+	fronttexture.Enabled = false
+	sidetexture.ImageLabel.Image = "rbxassetid://0"
+	sidetexture.Enabled = false
+	linetexture.ImageLabel.Image = "rbxassetid://0"
+	linetexture.Enabled = false
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 15
-			stset["1"].Text = codes.Lines.seventh.Stations.Fifteen
-			stset["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Fifteen
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetdots.Text = codes.Lines.seventh.Stations.Fifteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FourteenFifteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 15
+	stset["0"].Text = codes.Lines.seventh.Stations.Fifteen
+	stset["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetdots.Text = codes.Lines.seventh.Stations.Fifteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 14
-			stset["1"].Text = codes.Lines.seventh.Stations.Fourteen
-			stset["2"].Text = codes.Lines.seventh.Stations.Fifteen
-			stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
-			stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Fourteen
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Fifteen
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetdots.Text = codes.Lines.seventh.Stations.Fourteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.ThirteenFourteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 14
+	stset["0"].Text = codes.Lines.seventh.Stations.Fourteen
+	stset["1"].Text = codes.Lines.seventh.Stations.Fifteen
+	stset["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetdots.Text = codes.Lines.seventh.Stations.Fourteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 13
-			stset["1"].Text = codes.Lines.seventh.Stations.Thirteen
-			stset["2"].Text = codes.Lines.seventh.Stations.Fourteen
-			stset["3"].Text = codes.Lines.seventh.Stations.Fifteen
-			stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Thirteen
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Fourteen
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Fifteen
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
-			stsetdots.Text = codes.Lines.seventh.Stations.Thirteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.TwelveThirteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 13
+	stset["0"].Text = codes.Lines.seventh.Stations.Thirteen
+	stset["1"].Text = codes.Lines.seventh.Stations.Fourteen
+	stset["2"].Text = codes.Lines.seventh.Stations.Fifteen
+	stset["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetdots.Text = codes.Lines.seventh.Stations.Thirteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 12
-			stset["1"].Text = codes.Lines.seventh.Stations.Twelve
-			stset["2"].Text = codes.Lines.seventh.Stations.Thirteen
-			stset["3"].Text = codes.Lines.seventh.Stations.Fourteen
-			stset["4"].Text = codes.Lines.seventh.Stations.Fifteen
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Twelve
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Thirteen
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Fourteen
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Fifteen
-			stsetdots.Text = codes.Lines.seventh.Stations.Twelve
-		end
+if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.ElevenTwelve
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 12
+	stset["0"].Text = codes.Lines.seventh.Stations.Twelve
+	stset["1"].Text = codes.Lines.seventh.Stations.Thirteen
+	stset["2"].Text = codes.Lines.seventh.Stations.Fourteen
+	stset["3"].Text = codes.Lines.seventh.Stations.Fifteen
+	stset["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Twelve
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Twelve
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsetdots.Text = codes.Lines.seventh.Stations.Twelve
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 11
-			stset["1"].Text = codes.Lines.seventh.Stations.Eleven
-			stset["2"].Text = codes.Lines.seventh.Stations.Twelve
-			stset["3"].Text = codes.Lines.seventh.Stations.Thirteen
-			stset["4"].Text = codes.Lines.seventh.Stations.Fourteen
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Eleven
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Twelve
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Thirteen
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Fourteen
-			stsetdots.Text = codes.Lines.seventh.Stations.Eleven
-		end
+if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.TenEleven
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 11
+	stset["0"].Text = codes.Lines.seventh.Stations.Eleven
+	stset["1"].Text = codes.Lines.seventh.Stations.Twelve
+	stset["2"].Text = codes.Lines.seventh.Stations.Thirteen
+	stset["3"].Text = codes.Lines.seventh.Stations.Fourteen
+	stset["4"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Eleven
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Twelve
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Fifteen
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Eleven
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Twelve
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsetdots.Text = codes.Lines.seventh.Stations.Eleven
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 10
-			stset["1"].Text = codes.Lines.seventh.Stations.Ten
-			stset["2"].Text = codes.Lines.seventh.Stations.Eleven
-			stset["3"].Text = codes.Lines.seventh.Stations.Twelve
-			stset["4"].Text = codes.Lines.seventh.Stations.Thirteen
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Ten
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Eleven
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Twelve
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Thirteen
-			stsetdots.Text = codes.Lines.seventh.Stations.Ten
-		end
+if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.NineTen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 10
+	stset["0"].Text = codes.Lines.seventh.Stations.Ten
+	stset["1"].Text = codes.Lines.seventh.Stations.Eleven
+	stset["2"].Text = codes.Lines.seventh.Stations.Twelve
+	stset["3"].Text = codes.Lines.seventh.Stations.Thirteen
+	stset["4"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Ten
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Eleven
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Twelve
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Fourteen
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Ten
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Eleven
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Twelve
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsetdots.Text = codes.Lines.seventh.Stations.Ten
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 9
-			stset["1"].Text = codes.Lines.seventh.Stations.Nine
-			stset["2"].Text = codes.Lines.seventh.Stations.Ten
-			stset["3"].Text = codes.Lines.seventh.Stations.Eleven
-			stset["4"].Text = codes.Lines.seventh.Stations.Twelve
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Nine
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Ten
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Eleven
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Twelve
-			stsetdots.Text = codes.Lines.seventh.Stations.Nine
-		end
+if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.EightNine
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 9
+	stset["0"].Text = codes.Lines.seventh.Stations.Nine
+	stset["1"].Text = codes.Lines.seventh.Stations.Ten
+	stset["2"].Text = codes.Lines.seventh.Stations.Eleven
+	stset["3"].Text = codes.Lines.seventh.Stations.Twelve
+	stset["4"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Nine
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Ten
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Eleven
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Twelve
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Thirteen
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Nine
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Ten
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Eleven
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Twelve
+	stsetdots.Text = codes.Lines.seventh.Stations.Nine
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 8
-			stset["1"].Text = codes.Lines.seventh.Stations.Eight
-			stset["2"].Text = codes.Lines.seventh.Stations.Nine
-			stset["3"].Text = codes.Lines.seventh.Stations.Ten
-			stset["4"].Text = codes.Lines.seventh.Stations.Eleven
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Eight
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Nine
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Ten
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Eleven
-			stsetdots.Text = codes.Lines.seventh.Stations.Eight
-		end
+if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.SevenEight
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 8
+	stset["0"].Text = codes.Lines.seventh.Stations.Eight
+	stset["1"].Text = codes.Lines.seventh.Stations.Nine
+	stset["2"].Text = codes.Lines.seventh.Stations.Ten
+	stset["3"].Text = codes.Lines.seventh.Stations.Eleven
+	stset["4"].Text = codes.Lines.seventh.Stations.Twelve
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Eight
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Nine
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Ten
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Eleven
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Twelve
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Eight
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Nine
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Ten
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Eleven
+	stsetdots.Text = codes.Lines.seventh.Stations.Eight
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 7
-			stset["1"].Text = codes.Lines.seventh.Stations.Seven
-			stset["2"].Text = codes.Lines.seventh.Stations.Eight
-			stset["3"].Text = codes.Lines.seventh.Stations.Nine
-			stset["4"].Text = codes.Lines.seventh.Stations.Ten
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Seven
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Eight
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Nine
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Ten
-			stsetdots.Text = codes.Lines.seventh.Stations.Seven
-		end
+if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.SixSeven
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 7
+	stset["0"].Text = codes.Lines.seventh.Stations.Seven
+	stset["1"].Text = codes.Lines.seventh.Stations.Eight
+	stset["2"].Text = codes.Lines.seventh.Stations.Nine
+	stset["3"].Text = codes.Lines.seventh.Stations.Ten
+	stset["4"].Text = codes.Lines.seventh.Stations.Eleven
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Seven
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Eight
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Nine
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Ten
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Eleven
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Seven
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Eight
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Nine
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Ten
+	stsetdots.Text = codes.Lines.seventh.Stations.Seven
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 6
-			stset["1"].Text = codes.Lines.seventh.Stations.Six
-			stset["2"].Text = codes.Lines.seventh.Stations.Seven
-			stset["3"].Text = codes.Lines.seventh.Stations.Eight
-			stset["4"].Text = codes.Lines.seventh.Stations.Nine
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Six
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Seven
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Eight
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Nine
-			stsetdots.Text = codes.Lines.seventh.Stations.Six
-		end
+if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FiveSix
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 6
+	stset["0"].Text = codes.Lines.seventh.Stations.Six
+	stset["1"].Text = codes.Lines.seventh.Stations.Seven
+	stset["2"].Text = codes.Lines.seventh.Stations.Eight
+	stset["3"].Text = codes.Lines.seventh.Stations.Nine
+	stset["4"].Text = codes.Lines.seventh.Stations.Ten
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Six
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Seven
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Eight
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Nine
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Ten
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Six
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Seven
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Eight
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Nine
+	stsetdots.Text = codes.Lines.seventh.Stations.Six
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 5
-			stset["1"].Text = codes.Lines.seventh.Stations.Five
-			stset["2"].Text = codes.Lines.seventh.Stations.Six
-			stset["3"].Text = codes.Lines.seventh.Stations.Seven
-			stset["4"].Text = codes.Lines.seventh.Stations.Eight
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Five
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Six
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Seven
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Eight
-			stsetdots.Text = codes.Lines.seventh.Stations.Five
-		end
+if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.FourFive
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 5
+	stset["0"].Text = codes.Lines.seventh.Stations.Five
+	stset["1"].Text = codes.Lines.seventh.Stations.Six
+	stset["2"].Text = codes.Lines.seventh.Stations.Seven
+	stset["3"].Text = codes.Lines.seventh.Stations.Eight
+	stset["4"].Text = codes.Lines.seventh.Stations.Nine
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Five
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Six
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Seven
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Eight
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Nine
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Five
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Six
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Seven
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Eight
+	stsetdots.Text = codes.Lines.seventh.Stations.Five
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 4
-			stset["1"].Text = codes.Lines.seventh.Stations.Four
-			stset["2"].Text = codes.Lines.seventh.Stations.Five
-			stset["3"].Text = codes.Lines.seventh.Stations.Six
-			stset["4"].Text = codes.Lines.seventh.Stations.Seven
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Four
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Five
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Six
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Seven
-			stsetdots.Text = codes.Lines.seventh.Stations.Four
-		end
+if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.ThreeFour
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 4
+	stset["0"].Text = codes.Lines.seventh.Stations.Four
+	stset["1"].Text = codes.Lines.seventh.Stations.Five
+	stset["2"].Text = codes.Lines.seventh.Stations.Six
+	stset["3"].Text = codes.Lines.seventh.Stations.Seven
+	stset["4"].Text = codes.Lines.seventh.Stations.Eight
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Four
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Five
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Six
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Seven
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Eight
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Four
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Five
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Six
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Seven
+	stsetdots.Text = codes.Lines.seventh.Stations.Four
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 3
-			stset["1"].Text = codes.Lines.seventh.Stations.Three
-			stset["2"].Text = codes.Lines.seventh.Stations.Four
-			stset["3"].Text = codes.Lines.seventh.Stations.Five
-			stset["4"].Text = codes.Lines.seventh.Stations.Six
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Three
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Four
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Five
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Six
-			stsetdots.Text = codes.Lines.seventh.Stations.Three
-		end
+if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.TwoThree
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 3
+	stset["0"].Text = codes.Lines.seventh.Stations.Three
+	stset["1"].Text = codes.Lines.seventh.Stations.Four
+	stset["2"].Text = codes.Lines.seventh.Stations.Five
+	stset["3"].Text = codes.Lines.seventh.Stations.Six
+	stset["4"].Text = codes.Lines.seventh.Stations.Seven
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Three
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Four
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Five
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Six
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Seven
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Three
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Four
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Five
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Six
+	stsetdots.Text = codes.Lines.seventh.Stations.Three
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 7 then
-			script.Parent.Parent.Parent.Stop.Value = 2
-			stset["1"].Text = codes.Lines.seventh.Stations.Two
-			stset["2"].Text = codes.Lines.seventh.Stations.Three
-			stset["3"].Text = codes.Lines.seventh.Stations.Four
-			stset["4"].Text = codes.Lines.seventh.Stations.Five
-			stsetepis["4"].Text = codes.Lines.seventh.Stations.Two
-			stsetepis["3"].Text = codes.Lines.seventh.Stations.Three
-			stsetepis["2"].Text = codes.Lines.seventh.Stations.Four
-			stsetepis["1"].Text = codes.Lines.seventh.Stations.Five
-			stsetdots.Text = codes.Lines.seventh.Stations.Two
-		end
+if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 7 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.seventhline.OneTwo
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 2
+	stset["0"].Text = codes.Lines.seventh.Stations.Two
+	stset["1"].Text = codes.Lines.seventh.Stations.Three
+	stset["2"].Text = codes.Lines.seventh.Stations.Four
+	stset["3"].Text = codes.Lines.seventh.Stations.Five
+	stset["4"].Text = codes.Lines.seventh.Stations.Six
+	stsettwo["0"].Text = codes.Lines.seventh.Stations.Two
+	stsettwo["1"].Text = codes.Lines.seventh.Stations.Three
+	stsettwo["2"].Text = codes.Lines.seventh.Stations.Four
+	stsettwo["3"].Text = codes.Lines.seventh.Stations.Five
+	stsettwo["4"].Text = codes.Lines.seventh.Stations.Six
+	stsetepis["4"].Text = codes.Lines.seventh.Stations.Two
+	stsetepis["3"].Text = codes.Lines.seventh.Stations.Three
+	stsetepis["2"].Text = codes.Lines.seventh.Stations.Four
+	stsetepis["1"].Text = codes.Lines.seventh.Stations.Five
+	stsetdots.Text = codes.Lines.seventh.Stations.Two
+end
 
 	end)
 
 	--EIGHTH--
 	script.Parent.MouseButton1Up:Connect(function()
 		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.eighth.CountOfStops and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FifteenLASTSTOP
-			script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
-			-- disabling script + showing last stop --
-			stsetdots.Parent.Parent.Script.Enabled = false
-			stsetdots.Parent.Parent.NL.Visible = false
-			stsetdots.Parent.Parent.Cas.Visible = false
-			stsetdots.Parent.Parent.NS.Visible = false
-			stsetdots.Parent.Parent.NexSto.Visible = false
-			stsetdots.Parent.Parent.TS.Visible = false
-			stset.Parent.Ostatni.Konecna.Visible = true
-			stsetdots.Parent.Parent.KonZast.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.KonZast.Visible = false
-			stsetdots.Parent.Parent.VysPros.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.VysPros.Visible = false
-			stsetdots.Parent.Parent.KonZast.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.KonZast.Visible = false
-			stsetdots.Parent.Parent.VysPros.Visible = true
-			wait(2)
-			stsetdots.Parent.Parent.VysPros.Visible = false
-			stsetdots.Parent.Parent.Script.Enabled = true
-			-- done --
-			script.Parent.Parent.Parent.Stop.Value = 0
-			script.Parent.Parent.Parent.Line.Value = 0
-			stset["1"].Text = codes.Lines.first.Stations.Prazdno
-			stset["2"].Text = codes.Lines.first.Stations.Prazdno
-			stset["3"].Text = codes.Lines.first.Stations.Prazdno
-			stset["4"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["3"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
-			stsetepis.Line.Text = '->'
-			stsetdots.Text = codes.Lines.first.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.first.Stations.Prazdno
-			stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.first.Stations.Prazdno
-			stsetout.D.Text = codes.Lines.first.Stations.Prazdno
-			stsetout.L.Text = codes.Lines.first.Stations.Prazdno
-			stsetside.D.Text = codes.Lines.first.Stations.Prazdno
-			stsetside.L.Text = codes.Lines.first.Stations.Prazdno
-			stsetnum.TextLabel.Text = codes.Lines.first.Stations.Prazdno
-			fronttexture.ImageLabel.Image = "rbxassetid://0"
-			fronttexture.Enabled = false
-			sidetexture.ImageLabel.Image = "rbxassetid://0"
-			sidetexture.Enabled = false
-			linetexture.ImageLabel.Image = "rbxassetid://0"
-			linetexture.Enabled = false
-		end
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FifteenLASTSTOP
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	-- disabling script + showing last stop --
+	stsetdots.Parent.Parent.Script.Enabled = false
+	stsetdots.Parent.Parent.NL.Visible = false
+	stsetdots.Parent.Parent.NS.Visible = false
+	stsetdots.Parent.Parent.Cas.Visible = false
+	stsetdots.Parent.Parent.NexSto.Visible = false
+	stsetdots.Parent.Parent.TS.Visible = false
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.KonZast.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.KonZast.Visible = false
+	stsetdots.Parent.Parent.VysPros.Visible = true
+	wait(2)
+	stsetdots.Parent.Parent.VysPros.Visible = false
+	stsetdots.Parent.Parent.Script.Enabled = true
+	-- done --
+	script.Parent.Parent.Parent.Stop.Value = 0
+	script.Parent.Parent.Parent.Line.Value = 0
+	stset["0"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset.Parent["L&D"].Linka.Text = codes.Lines.eighth.Stations.Prazdno
+	stset.Parent["L&D"].Destinace.Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo.Parent["L&D"].Linka.Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo.Parent["L&D"].Destinace.Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis.Dest.Text = 'Použij tlačítko "VYPNOUT" pro odhlášení.'
+	stsetepis.Line.Text = '->'
+	stsetdots.Text = codes.Lines.eighth.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetdots.Parent.Parent.NL["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetout.D.Text = codes.Lines.eighth.Stations.Prazdno
+	stsetout.L.Text = codes.Lines.eighth.Stations.Prazdno
+	stsetside.D.Text = codes.Lines.eighth.Stations.Prazdno
+	stsetside.L.Text = codes.Lines.eighth.Stations.Prazdno
+	stsetnum.TextLabel.Text = codes.Lines.eighth.Stations.Prazdno
+	fronttexture.ImageLabel.Image = "rbxassetid://0"
+	fronttexture.Enabled = false
+	sidetexture.ImageLabel.Image = "rbxassetid://0"
+	sidetexture.Enabled = false
+	linetexture.ImageLabel.Image = "rbxassetid://0"
+	linetexture.Enabled = false
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 15
-			stset["1"].Text = codes.Lines.eighth.Stations.Fifteen
-			stset["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Fifteen
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetdots.Text = codes.Lines.eighth.Stations.Fifteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 14 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FourteenFifteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 15
+	stset["0"].Text = codes.Lines.eighth.Stations.Fifteen
+	stset["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetdots.Text = codes.Lines.eighth.Stations.Fifteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 14
-			stset["1"].Text = codes.Lines.eighth.Stations.Fourteen
-			stset["2"].Text = codes.Lines.eighth.Stations.Fifteen
-			stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
-			stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Fourteen
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Fifteen
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetdots.Text = codes.Lines.eighth.Stations.Fourteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 13 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.ThirteenFourteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 14
+	stset["0"].Text = codes.Lines.eighth.Stations.Fourteen
+	stset["1"].Text = codes.Lines.eighth.Stations.Fifteen
+	stset["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetdots.Text = codes.Lines.eighth.Stations.Fourteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 13
-			stset["1"].Text = codes.Lines.eighth.Stations.Thirteen
-			stset["2"].Text = codes.Lines.eighth.Stations.Fourteen
-			stset["3"].Text = codes.Lines.eighth.Stations.Fifteen
-			stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Thirteen
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Fourteen
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Fifteen
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
-			stsetdots.Text = codes.Lines.eighth.Stations.Thirteen
-		end
+if script.Parent.Parent.Parent.Stop.Value == 12 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.TwelveThirteen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 13
+	stset["0"].Text = codes.Lines.eighth.Stations.Thirteen
+	stset["1"].Text = codes.Lines.eighth.Stations.Fourteen
+	stset["2"].Text = codes.Lines.eighth.Stations.Fifteen
+	stset["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetdots.Text = codes.Lines.eighth.Stations.Thirteen
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 12
-			stset["1"].Text = codes.Lines.eighth.Stations.Twelve
-			stset["2"].Text = codes.Lines.eighth.Stations.Thirteen
-			stset["3"].Text = codes.Lines.eighth.Stations.Fourteen
-			stset["4"].Text = codes.Lines.eighth.Stations.Fifteen
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Twelve
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Thirteen
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Fourteen
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Fifteen
-			stsetdots.Text = codes.Lines.eighth.Stations.Twelve
-		end
+if script.Parent.Parent.Parent.Stop.Value == 11 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.ElevenTwelve
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 12
+	stset["0"].Text = codes.Lines.eighth.Stations.Twelve
+	stset["1"].Text = codes.Lines.eighth.Stations.Thirteen
+	stset["2"].Text = codes.Lines.eighth.Stations.Fourteen
+	stset["3"].Text = codes.Lines.eighth.Stations.Fifteen
+	stset["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Twelve
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Prazdno
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Twelve
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsetdots.Text = codes.Lines.eighth.Stations.Twelve
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 11
-			stset["1"].Text = codes.Lines.eighth.Stations.Eleven
-			stset["2"].Text = codes.Lines.eighth.Stations.Twelve
-			stset["3"].Text = codes.Lines.eighth.Stations.Thirteen
-			stset["4"].Text = codes.Lines.eighth.Stations.Fourteen
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Eleven
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Twelve
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Thirteen
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Fourteen
-			stsetdots.Text = codes.Lines.eighth.Stations.Eleven
-		end
+if script.Parent.Parent.Parent.Stop.Value == 10 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.TenEleven
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 11
+	stset["0"].Text = codes.Lines.eighth.Stations.Eleven
+	stset["1"].Text = codes.Lines.eighth.Stations.Twelve
+	stset["2"].Text = codes.Lines.eighth.Stations.Thirteen
+	stset["3"].Text = codes.Lines.eighth.Stations.Fourteen
+	stset["4"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Eleven
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Twelve
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Fifteen
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Eleven
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Twelve
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsetdots.Text = codes.Lines.eighth.Stations.Eleven
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 10
-			stset["1"].Text = codes.Lines.eighth.Stations.Ten
-			stset["2"].Text = codes.Lines.eighth.Stations.Eleven
-			stset["3"].Text = codes.Lines.eighth.Stations.Twelve
-			stset["4"].Text = codes.Lines.eighth.Stations.Thirteen
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Ten
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Eleven
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Twelve
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Thirteen
-			stsetdots.Text = codes.Lines.eighth.Stations.Ten
-		end
+if script.Parent.Parent.Parent.Stop.Value == 9 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.NineTen
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 10
+	stset["0"].Text = codes.Lines.eighth.Stations.Ten
+	stset["1"].Text = codes.Lines.eighth.Stations.Eleven
+	stset["2"].Text = codes.Lines.eighth.Stations.Twelve
+	stset["3"].Text = codes.Lines.eighth.Stations.Thirteen
+	stset["4"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Ten
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Eleven
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Twelve
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Fourteen
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Ten
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Eleven
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Twelve
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsetdots.Text = codes.Lines.eighth.Stations.Ten
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 9
-			stset["1"].Text = codes.Lines.eighth.Stations.Nine
-			stset["2"].Text = codes.Lines.eighth.Stations.Ten
-			stset["3"].Text = codes.Lines.eighth.Stations.Eleven
-			stset["4"].Text = codes.Lines.eighth.Stations.Twelve
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Nine
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Ten
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Eleven
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Twelve
-			stsetdots.Text = codes.Lines.eighth.Stations.Nine
-		end
+if script.Parent.Parent.Parent.Stop.Value == 8 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.EightNine
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 9
+	stset["0"].Text = codes.Lines.eighth.Stations.Nine
+	stset["1"].Text = codes.Lines.eighth.Stations.Ten
+	stset["2"].Text = codes.Lines.eighth.Stations.Eleven
+	stset["3"].Text = codes.Lines.eighth.Stations.Twelve
+	stset["4"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Nine
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Ten
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Eleven
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Twelve
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Thirteen
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Nine
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Ten
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Eleven
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Twelve
+	stsetdots.Text = codes.Lines.eighth.Stations.Nine
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 8
-			stset["1"].Text = codes.Lines.eighth.Stations.Eight
-			stset["2"].Text = codes.Lines.eighth.Stations.Nine
-			stset["3"].Text = codes.Lines.eighth.Stations.Ten
-			stset["4"].Text = codes.Lines.eighth.Stations.Eleven
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Eight
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Nine
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Ten
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Eleven
-			stsetdots.Text = codes.Lines.eighth.Stations.Eight
-		end
+if script.Parent.Parent.Parent.Stop.Value == 7 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.SevenEight
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 8
+	stset["0"].Text = codes.Lines.eighth.Stations.Eight
+	stset["1"].Text = codes.Lines.eighth.Stations.Nine
+	stset["2"].Text = codes.Lines.eighth.Stations.Ten
+	stset["3"].Text = codes.Lines.eighth.Stations.Eleven
+	stset["4"].Text = codes.Lines.eighth.Stations.Twelve
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Eight
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Nine
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Ten
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Eleven
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Twelve
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Eight
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Nine
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Ten
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Eleven
+	stsetdots.Text = codes.Lines.eighth.Stations.Eight
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 7
-			stset["1"].Text = codes.Lines.eighth.Stations.Seven
-			stset["2"].Text = codes.Lines.eighth.Stations.Eight
-			stset["3"].Text = codes.Lines.eighth.Stations.Nine
-			stset["4"].Text = codes.Lines.eighth.Stations.Ten
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Seven
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Eight
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Nine
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Ten
-			stsetdots.Text = codes.Lines.eighth.Stations.Seven
-		end
+if script.Parent.Parent.Parent.Stop.Value == 6 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.SixSeven
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 7
+	stset["0"].Text = codes.Lines.eighth.Stations.Seven
+	stset["1"].Text = codes.Lines.eighth.Stations.Eight
+	stset["2"].Text = codes.Lines.eighth.Stations.Nine
+	stset["3"].Text = codes.Lines.eighth.Stations.Ten
+	stset["4"].Text = codes.Lines.eighth.Stations.Eleven
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Seven
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Eight
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Nine
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Ten
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Eleven
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Seven
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Eight
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Nine
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Ten
+	stsetdots.Text = codes.Lines.eighth.Stations.Seven
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 6
-			stset["1"].Text = codes.Lines.eighth.Stations.Six
-			stset["2"].Text = codes.Lines.eighth.Stations.Seven
-			stset["3"].Text = codes.Lines.eighth.Stations.Eight
-			stset["4"].Text = codes.Lines.eighth.Stations.Nine
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Six
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Seven
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Eight
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Nine
-			stsetdots.Text = codes.Lines.eighth.Stations.Six
-		end
+if script.Parent.Parent.Parent.Stop.Value == 5 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FiveSix
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 6
+	stset["0"].Text = codes.Lines.eighth.Stations.Six
+	stset["1"].Text = codes.Lines.eighth.Stations.Seven
+	stset["2"].Text = codes.Lines.eighth.Stations.Eight
+	stset["3"].Text = codes.Lines.eighth.Stations.Nine
+	stset["4"].Text = codes.Lines.eighth.Stations.Ten
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Six
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Seven
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Eight
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Nine
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Ten
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Six
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Seven
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Eight
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Nine
+	stsetdots.Text = codes.Lines.eighth.Stations.Six
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 5
-			stset["1"].Text = codes.Lines.eighth.Stations.Five
-			stset["2"].Text = codes.Lines.eighth.Stations.Six
-			stset["3"].Text = codes.Lines.eighth.Stations.Seven
-			stset["4"].Text = codes.Lines.eighth.Stations.Eight
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Five
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Six
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Seven
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Eight
-			stsetdots.Text = codes.Lines.eighth.Stations.Five
-		end
+if script.Parent.Parent.Parent.Stop.Value == 4 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.FourFive
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 5
+	stset["0"].Text = codes.Lines.eighth.Stations.Five
+	stset["1"].Text = codes.Lines.eighth.Stations.Six
+	stset["2"].Text = codes.Lines.eighth.Stations.Seven
+	stset["3"].Text = codes.Lines.eighth.Stations.Eight
+	stset["4"].Text = codes.Lines.eighth.Stations.Nine
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Five
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Six
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Seven
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Eight
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Nine
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Five
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Six
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Seven
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Eight
+	stsetdots.Text = codes.Lines.eighth.Stations.Five
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 4
-			stset["1"].Text = codes.Lines.eighth.Stations.Four
-			stset["2"].Text = codes.Lines.eighth.Stations.Five
-			stset["3"].Text = codes.Lines.eighth.Stations.Six
-			stset["4"].Text = codes.Lines.eighth.Stations.Seven
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Four
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Five
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Six
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Seven
-			stsetdots.Text = codes.Lines.eighth.Stations.Four
-		end
+if script.Parent.Parent.Parent.Stop.Value == 3 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.ThreeFour
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 4
+	stset["0"].Text = codes.Lines.eighth.Stations.Four
+	stset["1"].Text = codes.Lines.eighth.Stations.Five
+	stset["2"].Text = codes.Lines.eighth.Stations.Six
+	stset["3"].Text = codes.Lines.eighth.Stations.Seven
+	stset["4"].Text = codes.Lines.eighth.Stations.Eight
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Four
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Five
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Six
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Seven
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Eight
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Four
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Five
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Six
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Seven
+	stsetdots.Text = codes.Lines.eighth.Stations.Four
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 3
-			stset["1"].Text = codes.Lines.eighth.Stations.Three
-			stset["2"].Text = codes.Lines.eighth.Stations.Four
-			stset["3"].Text = codes.Lines.eighth.Stations.Five
-			stset["4"].Text = codes.Lines.eighth.Stations.Six
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Three
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Four
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Five
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Six
-			stsetdots.Text = codes.Lines.eighth.Stations.Three
-		end
+if script.Parent.Parent.Parent.Stop.Value == 2 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.TwoThree
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 3
+	stset["0"].Text = codes.Lines.eighth.Stations.Three
+	stset["1"].Text = codes.Lines.eighth.Stations.Four
+	stset["2"].Text = codes.Lines.eighth.Stations.Five
+	stset["3"].Text = codes.Lines.eighth.Stations.Six
+	stset["4"].Text = codes.Lines.eighth.Stations.Seven
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Three
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Four
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Five
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Six
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Seven
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Three
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Four
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Five
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Six
+	stsetdots.Text = codes.Lines.eighth.Stations.Three
+end
 
-		if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 8 then
-			script.Parent.Parent.Parent.Stop.Value = 2
-			stset["1"].Text = codes.Lines.eighth.Stations.Two
-			stset["2"].Text = codes.Lines.eighth.Stations.Three
-			stset["3"].Text = codes.Lines.eighth.Stations.Four
-			stset["4"].Text = codes.Lines.eighth.Stations.Five
-			stsetepis["4"].Text = codes.Lines.eighth.Stations.Two
-			stsetepis["3"].Text = codes.Lines.eighth.Stations.Three
-			stsetepis["2"].Text = codes.Lines.eighth.Stations.Four
-			stsetepis["1"].Text = codes.Lines.eighth.Stations.Five
-			stsetdots.Text = codes.Lines.eighth.Stations.Two
-		end
+if script.Parent.Parent.Parent.Stop.Value == 1 and script.Parent.Parent.Parent.Line.Value == 8 then
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound.SoundId = codes.Lines.StationAnnouncements.eighthline.OneTwo
+	script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni.Sound:Play()
+	wait(0)
+	script.Parent.Parent.Parent.Stop.Value = 2
+	stset["0"].Text = codes.Lines.eighth.Stations.Two
+	stset["1"].Text = codes.Lines.eighth.Stations.Three
+	stset["2"].Text = codes.Lines.eighth.Stations.Four
+	stset["3"].Text = codes.Lines.eighth.Stations.Five
+	stset["4"].Text = codes.Lines.eighth.Stations.Six
+	stsettwo["0"].Text = codes.Lines.eighth.Stations.Two
+	stsettwo["1"].Text = codes.Lines.eighth.Stations.Three
+	stsettwo["2"].Text = codes.Lines.eighth.Stations.Four
+	stsettwo["3"].Text = codes.Lines.eighth.Stations.Five
+	stsettwo["4"].Text = codes.Lines.eighth.Stations.Six
+	stsetepis["4"].Text = codes.Lines.eighth.Stations.Two
+	stsetepis["3"].Text = codes.Lines.eighth.Stations.Three
+	stsetepis["2"].Text = codes.Lines.eighth.Stations.Four
+	stsetepis["1"].Text = codes.Lines.eighth.Stations.Five
+	stsetdots.Text = codes.Lines.eighth.Stations.Two
+end
 
 	end)
 
