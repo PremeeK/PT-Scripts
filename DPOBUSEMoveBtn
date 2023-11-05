@@ -13,7 +13,6 @@ local sidetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Pare
 local linetexture = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent["NUMBER BUSE"].Screen.Textury
 -- local PROPERTIES --
 local reprak = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.REPRODUKTOR.RozlehlostHlaseni
-local Parcel = require(9428572121)
 --
 local beep = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Svetylka.On.beep
 local beeptwo = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Svetylka.On.beeptwo
