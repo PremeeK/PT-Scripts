@@ -22,6 +22,7 @@ if Parcel:Whitelist("6333f060ed3f6516455a91a1", "wi4eaup9pabvcoh76zsxabjnljqw") 
 	script.Parent.MouseButton1Up:Connect(function()
 		beep:Play()
 	end)
+
 	--FIRST--
 	script.Parent.MouseButton1Up:Connect(function()
 		if script.Parent.Parent.Parent.Stop.Value == 15 or script.Parent.Parent.Parent.Stop.Value == codes.Lines.first.CountOfStops and script.Parent.Parent.Parent.Line.Value == 1 then
