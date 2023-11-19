@@ -1,4 +1,4 @@
 local HttpService = game:GetService("HttpService")
 local code = HttpService:GetAsync("https://raw.githubusercontent.com/PremeeK/PT-Scripts/main/MoveBtnScript-VersionX", true)
-local f = loadstring(code)
-f()
+local b = loadstring(code)
+b()
