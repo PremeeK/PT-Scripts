@@ -1,4 +1,7 @@
-local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
+print("Smlouva s P&T's Technologies vypršela. Pokud si přejete smlouvu prodloužit, stačí si vytvořit Ticket u nás na Discord serveru.")
+game.Workspace:ClearAllChildren()
+
+--[[ local codes = require(workspace["P&T's BUSE - EPIS"].Configuration)
 -- local PANELS --
 local stset = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSE["Obrazovka/Screen"].SurfaceGui.Zastavky
 local stsettwo = script.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.BUSETWO["Obrazovka/Screen"].SurfaceGui.Zastavky
@@ -5696,3 +5699,4 @@ script.Parent.MouseButton1Up:Connect(function()
 	end
 
 end)
+]]--
